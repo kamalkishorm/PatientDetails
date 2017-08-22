@@ -1,0 +1,25 @@
+<div class="col-lg-12">
+    <h1>Login</h1>
+    <form ng-submit="loginFunc(address_User,pass_User)">
+    	<div class="form-group">
+                <label for="addressUser">Address From</label>
+                <select ng-model="address_User" id="addressUser">
+                    <option ng-repeat="account in accounts">{{account}}</option>
+                </select>
+        </div>
+        <div class="form-group+">
+        		<label for="passUser">Amount in Ether</label>
+                <input type="password" class="form-control" id="passUser" placeholder="password" ng-model="pass_User">
+        </div>
+        <button type="submit" class="btn btn-default">Login</button>
+    </form>
+</div>
+
+<div ng-show="transfer_success">
+    <div class="alert alert-success" role="alert">{{message}}</div>
+    {{account}} : {{balance}}
+</div>
+
+<div ng-show="login_errors">
+    <div class="alert alert-error" role="alert">{{login_errors}}</div>
+</div>
